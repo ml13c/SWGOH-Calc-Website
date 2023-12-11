@@ -1,11 +1,8 @@
-//int
 let finalshardsremaining = 330;
 const droprate=.33;
 var BattleAmt;
 var finalshardAmt;
 //
-
-
 function openMAINTAB(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -18,37 +15,7 @@ function openMAINTAB(evt, cityName) {
     }
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
-  }
-    
-function recallCharactername() {
-    var select = document.getElementById("characterdropdown");
-    var x = select.value;
-    document.getElementById("characterselection").innerHTML = "You selected: " + x;
-    switch (x) {
-      case "No Character chosen":
-        var p = document.createElement("p");
-        p.innerHTML = "please choose a character";
-        document.getElementById("characterselection").appendChild(p);
-        break;
-      case "Character1":
-        var p = document.createElement("p");
-        p.innerHTML ="character 1 has been chosen"
-        document.getElementById("characterselection").appendChild(p);
-        break;
-      case "Character2":
-        var p = document.createElement("p");
-        p.innerHTML = "character 2 has been chosen";
-        document.getElementById("characterselection").appendChild(p);
-        break;
-      case "Character3":
-        var p = document.createElement("p");
-        p.innerHTML = "character 3 has been chosen";
-        document.getElementById("characterselection").appendChild(p);
-        break;
-      default:
-        break;
-    }
-  }
+}
 
 function staramt() {
     let shardsremaining = 330;
@@ -402,9 +369,24 @@ function displayShardAmt() {
       if (k === key) {
         values.push("Character: "+ v.Charactername+", ");
         values.push("Location: "+ v.Location+": , ");
-        values.push("Will obtain "+ (finalshardsremaining-finalshardAmt)+" shards in ");
-        values.push(daystofarm= (finalshardsremaining-finalshardAmt)/((v.Nodeamount)*(BattleAmt)*(droprate)*(v.NodeShardamount)+(v.charactershipmentshardamount))+ "days")
+        values.push("Will obtain "+ (finalshardsremaining-finalshardAmt)+" shards in:");
+        values.push(daystofarm= ((finalshardsremaining-finalshardAmt)/((v.Nodeamount)*(BattleAmt)*(droprate)*(v.NodeShardamount)+(v.charactershipmentshardamount))).toFixed(1)+ " days")
     }
     }
-    document.getElementById("output").innerHTML = values.join(" ");
+    document.getElementById("output").innerHTML = values.join("<br>");
   }
+
+
+
+//CSS STARS BACKGROUND
+const stars = 500;
+const $stars = document.querySelector('.stars');
+
+for (let i = 0; i < stars; i++) {
+  const $star = document.createElement('div');
+  $star.classList.add('star');
+  $star.style.top = `${Math.random() * 100}%`;
+  $star.style.left = `${Math.random() * 100}%`;
+  $star.style.animationDelay = `${Math.random() * 10}s`;
+  $stars.appendChild($star);
+}
