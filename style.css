@@ -1,88 +1,178 @@
-/*MAIN CONTAINER BODY TEXT COLOR */
+/*SIDEBAR*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70px;
+    background-color: #12171e;
+    padding: .4rem .8rem;
+    transition: all .5s ease;
+}
+
+.sidebar.active ~ .main-content{
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.sidebar.active{
+    width: 250px;
+}
+
+.sidebar #btn{
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50x;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar .top .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active .top .logo{
+    opacity: 1;
+}
+.top .logo i {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    color:#fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover{
+    background-color: #fff;
+    color: #d8d9dc;
+}
+
+.sidebar ul li a {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.sidebar .nav-item{
+    opacity: 0;
+}
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    color: yellow;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0.5rem 0.8rem rgba(208, 197, 98, 0.2);
+    border-radius: .6rem;
+    padding: .4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+}
+
+.sidebar ul li:hover .tooltip {
+    opacity: 1;
+}
+
+.sidebar.active ul li .tooltip{
+    display: none;
+}
+.main-content{
+    position: relative;
+    background-color: black;
+    min-height: 100vh;
+    top: 0;
+    left: 180px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+}
+
+/*MAIN TEXT COLOR*/
 h1, h2, h3, h4 {
     color: rgb(201, 206, 57);
-  }
+}
 p {
     color: white;
 }
-
-  /* Style the tab selection border part */
-  .tab {
-    float: left;
-    border: 1px solid #3e3e3e;
-    background-color: #f1f1f1;
-    width: 20%;
-    height: 110px;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-    display: block;
-    background-color: black;
-    color: rgb(255, 244, 244);
-    padding: 11px 8px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #615f5f;
-  }
-  
-  /* Color of active tab once selected */
-  .tab button.active {
-    background-color: rgb(53, 55, 40);
-  }
-  
-  /* Seperates main tabs and tab content */
-  .tabcontent {
+label{
     color: white;
-    float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 100%;
-    border-left: none;
-    height: 700px;
+}
+
+/*STAR BACKGROUND*/
+body {
+    background-color: black;
+    background-image: radial-gradient(white 15%, transparent 16%), radial-gradient(white 15%, transparent 16%), black;
+    background-position: 0 0, 80px 80px;
+    background-size: 160px 160px;
   }
-    /*BACKGROUND STAR*/
-    body {
-      background-color: black;
-      background-image: radial-gradient(white 15%, transparent 16%), radial-gradient(white 15%, transparent 16%), black;
-      background-position: 0 0, 80px 80px;
-      background-size: 160px 160px;
+  
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    box-shadow: 0 0 2px white;
+    animation: flicker 1s infinite;
+  }
+  
+  @keyframes flicker {
+    0% {
+      opacity: 1;
     }
-    
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+    50% {
+      opacity: 0.5;
     }
-    
-    .star {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      background-color: white;
-      box-shadow: 0 0 2px white;
-      animation: flicker 1s infinite;
+    100% {
+      opacity: 1;
     }
-    
-    @keyframes flicker {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
+  }
