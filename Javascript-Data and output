@@ -376,17 +376,25 @@ function displayShardAmt() {
     document.getElementById("output").innerHTML = values.join("<br>");
   }
 
+  document.getElementById("shardamount").addEventListener("input", displayShardAmt);
+  document.getElementById("refreshamt").addEventListener("input", displayRefreshAmt);
 
+//sidebar
+let btn = document.querySelector('#btn')
+let sidebar = document.querySelector('.sidebar')
+btn.onclick = function(){
+  sidebar.classList.toggle('active')
+};
 
-//CSS STARS BACKGROUND
+//star background
 const stars = 500;
 const $stars = document.querySelector('.stars');
 
 for (let i = 0; i < stars; i++) {
-  const $star = document.createElement('div');
-  $star.classList.add('star');
-  $star.style.top = `${Math.random() * 100}%`;
-  $star.style.left = `${Math.random() * 100}%`;
-  $star.style.animationDelay = `${Math.random() * 10}s`;
-  $stars.appendChild($star);
+const $star = document.createElement('div');
+$star.classList.add('star');
+$star.style.top = `${Math.random() * 100}%`;
+$star.style.left = `${Math.random() * 100}%`;
+$star.style.animationDelay = `${Math.random() * 10}s`;
+$stars.appendChild($star);
 }
