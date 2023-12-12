@@ -1,328 +1,384 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Galaxy of Heroes Farming Calculator</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="stle.css">
 </head>
 <body>
-<div class="stars"></div>
-	<script src="index.js"></script>
-<h2 color: white;>Star Wars Galaxy of Heroes Farming Calculator</h2>
-<p>Unit Data last updated on: 11/27/2023</p>
-
-<div class="tab">
-  <button class="tablinks" onclick="openMAINTAB(event, 'Characters')">Characters</button>
-  <button class="tablinks" onclick="openMAINTAB(event, 'Ships')">Ships</button>
-  <button class="tablinks" onclick="openMAINTAB(event, 'Temporary')">Temporary</button>
-</div>
-
-<div id="Characters" class="tabcontent">
-  <h3>Characters</h3>
-  <p>Character farming c++ data.</p>
-  <p>Choose a character:</p>  
-    <div>
-      <select id="characterdropdown" onclick="outputCharacterData()">
-        <option value="No Character chosen">choose</option>
-        <option value="0-0-0">0-0-0</option>
-        <option value="50R-T">50R-T</option>
-        <option value="Aayla Secura">Aayla Secura</option>
-        <option value="Admiral Ackbar">Admiral Ackbar</option>
-        <option value="Admiral Piett">Admiral Piett</option>
-        <option value="Admiral Raddus">Admiral Raddus</option>
-        <option value="Admiral Trench">Admiral Trench</option>
-        <option value="Ahsoka Tano">Ahsoka Tano</option>
-        <option value="Ahsoka Tano (Fulcrum)">Ahsoka Tano (Fulcrum)</option>
-        <option value="Amilyn Holdo">Amilyn Holdo</option>
-        <option value="ARC Trooper">ARC Trooper</option>
-        <option value="Asajj Ventress">Asajj Ventress</option>
-        <option value="Aurra Sing">Aurra Sing</option>
-        <option value="B1 Battle Droid">B1 Battle Droid</option>
-        <option value="B2 Super Battle Droid">B2 Super Battle Droid</option>
-        <option value="Barriss Offee">Barriss Offee</option>
-        <option value="Bastila Shan">Bastila Shan</option>
-        <option value="Bastila Shan (Fallen)">Bastila Shan (Fallen)</option>
-        <option value="Baze Malbus">Baze Malbus</option>
-        <option value="BB-8">BB-8</option>
-        <option value="Ben Solo">Ben Solo</option>
-        <option value="Biggs Darklighter">Biggs Darklighter</option>
-        <option value="Bistan">Bistan</option>
-        <option value="Bo-Katan Kryze">Bo-Katan Kryze</option>
-        <option value="Boba Fett">Boba Fett</option>
-        <option value="Boba Fett, Scion of Jango">Boba Fett, Scion of Jango</option>
-        <option value="Bodhi Rook">Bodhi Rook</option>
-        <option value="Bossk">Bossk</option>
-        <option value="Boushh (Leia Organa)">Boushh (Leia Organa)</option>
-        <option value="BT-1">BT-1</option>
-        <option value="C-3PO">C-3PO</option>
-        <option value="Cad Bane">Cad Bane</option>
-        <option value="Cal Kestis">Cal Kestis</option>
-        <option value="Canderous Ordo">Canderous Ordo</option>
-        <option value="Captain Drogan">Captain Drogan</option>
-        <option value="Captain Han Solo">Captain Han Solo</option>
-        <option value="Captain Phasma">Captain Phasma</option>
-        <option value="Captain Rex">Captain Rex</option>
-        <option value="Cara Dune">Cara Dune</option>
-        <option value="Carth Onasi">Carth Onasi</option>
-        <option value="Cassian Andor">Cassian Andor</option>
-        <option value="CC-2224 &quot;Cody&quot;">CC-2224 "Cody"</option>
-        <option value="Cere Junda">Cere Junda</option>
-        <option value="Chewbacca">Chewbacca</option>
-        <option value="Chief Chirpa">Chief Chirpa</option>
-        <option value="Chief Nebit">Chief Nebit</option>
-        <option value="Chirrut ├Ämwe">Chirrut ├Ämwe</option>
-        <option value="Chopper">Chopper</option>
-        <option value="Clone Sergeant - Phase I">Clone Sergeant - Phase I</option>
-        <option value="Clone Wars Chewbacca">Clone Wars Chewbacca</option>
-        <option value="Colonel Starck">Colonel Starck</option>
-        <option value="Commander Ahsoka Tano">Commander Ahsoka Tano</option>
-        <option value="Commander Luke Skywalker">Commander Luke Skywalker</option>
-        <option value="Coruscant Underworld Police">Coruscant Underworld Police</option>
-        <option value="Count Dooku">Count Dooku</option>
-        <option value="CT-21-0408 &quot;Echo&quot;">CT-21-0408 "Echo"</option>
-        <option value="CT-5555 &quot;Fives&quot;">CT-5555 "Fives"</option>
-        <option value="CT-7567 &quot;Rex&quot;">CT-7567 "Rex"</option>
-        <option value="Dark Trooper">Dark Trooper</option>
-        <option value="Dark Trooper Moff Gideon">Dark Trooper Moff Gideon</option>
-        <option value="Darth Malak">Darth Malak</option>
-        <option value="Darth Malgus">Darth Malgus</option>
-        <option value="Darth Maul">Darth Maul</option>
-        <option value="Darth Nihilus">Darth Nihilus</option>
-        <option value="Darth Revan">Darth Revan</option>
-        <option value="Darth Sidious">Darth Sidious</option>
-        <option value="Darth Sion">Darth Sion</option>
-        <option value="Darth Talon">Darth Talon</option>
-        <option value="Darth Traya">Darth Traya</option>
-        <option value="Darth Vader">Darth Vader</option>
-        <option value="Dash Rendar">Dash Rendar</option>
-        <option value="Dathcha">Dathcha</option>
-        <option value="Death Trooper">Death Trooper</option>
-        <option value="Dengar">Dengar</option>
-        <option value="Director Krennic">Director Krennic</option>
-        <option value="Doctor Aphra">Doctor Aphra</option>
-        <option value="Droideka">Droideka</option>
-        <option value="Echo">Echo</option>
-        <option value="Eeth Koth">Eeth Koth</option>
-        <option value="Eighth Brother">Eighth Brother</option>
-        <option value="Embo">Embo</option>
-        <option value="Emperor Palpatine">Emperor Palpatine</option>
-        <option value="Enfys Nest">Enfys Nest</option>
-        <option value="Ewok Elder">Ewok Elder</option>
-        <option value="Ewok Scout">Ewok Scout</option>
-        <option value="Ezra Bridger">Ezra Bridger</option>
-        <option value="Fennec Shand">Fennec Shand</option>
-        <option value="Fifth Brother">Fifth Brother</option>
-        <option value="Finn">Finn</option>
-        <option value="First Order Executioner">First Order Executioner</option>
-        <option value="First Order Officer">First Order Officer</option>
-        <option value="First Order SF TIE Pilot">First Order SF TIE Pilot</option>
-        <option value="First Order Stormtrooper">First Order Stormtrooper</option>
-        <option value="First Order TIE Pilot">First Order TIE Pilot</option>
-        <option value="Gamorrean Guard">Gamorrean Guard</option>
-        <option value="Gar Saxon">Gar Saxon</option>
-        <option value="Garazeb &quot;Zeb&quot; Orrelios">Garazeb "Zeb" Orrelios</option>
-        <option value="General Grievous">General Grievous</option>
-        <option value="General Hux">General Hux</option>
-        <option value="General Kenobi">General Kenobi</option>
-        <option value="General Skywalker">General Skywalker</option>
-        <option value="General Veers">General Veers</option>
-        <option value="Geonosian Brood Alpha">Geonosian Brood Alpha</option>
-        <option value="Geonosian Soldier">Geonosian Soldier</option>
-        <option value="Geonosian Spy">Geonosian Spy</option>
-        <option value="Grand Admiral Thrawn">Grand Admiral Thrawn</option>
-        <option value="Grand Inquisitor">Grand Inquisitor</option>
-        <option value="Grand Master Yoda">Grand Master Yoda</option>
-        <option value="Grand Moff Tarkin">Grand Moff Tarkin</option>
-        <option value="Greedo">Greedo</option>
-        <option value="Greef Karga">Greef Karga</option>
-        <option value="Han Solo">Han Solo</option>
-        <option value="Hera Syndulla">Hera Syndulla</option>
-        <option value="Hermit Yoda">Hermit Yoda</option>
-        <option value="HK-47">HK-47</option>
-        <option value="Hondo Ohnaka">Hondo Ohnaka</option>
-        <option value="Hoth Rebel Scout">Hoth Rebel Scout</option>
-        <option value="Hoth Rebel Soldier">Hoth Rebel Soldier</option>
-        <option value="Hunter">Hunter</option>
-        <option value="Iden Versio">Iden Versio</option>
-        <option value="IG-100 MagnaGuard">IG-100 MagnaGuard</option>
-        <option value="IG-11">IG-11</option>
-        <option value="IG-12 & Grogu">IG-12 & Grogu</option>
-        <option value="IG-86 Sentinel Droid">IG-86 Sentinel Droid</option>
-        <option value="IG-88">IG-88</option>
-        <option value="Ima-Gun Di">Ima-Gun Di</option>
-        <option value="Imperial Probe Droid">Imperial Probe Droid</option>
-        <option value="Imperial Super Commando">Imperial Super Commando</option>
-        <option value="Jabba the Hutt">Jabba the Hutt</option>
-        <option value="Jango Fett">Jango Fett</option>
-        <option value="Jawa">Jawa</option>
-        <option value="Jawa Engineer">Jawa Engineer</option>
-        <option value="Jawa Scavenger">Jawa Scavenger</option>
-        <option value="Jedi Consular">Jedi Consular</option>
-        <option value="Jedi Knight Anakin">Jedi Knight Anakin</option>
-        <option value="Jedi Knight Cal Kestis">Jedi Knight Cal Kestis</option>
-        <option value="Jedi Knight Guardian">Jedi Knight Guardian</option>
-        <option value="Jedi Knight Luke Skywalker">Jedi Knight Luke Skywalker</option>
-        <option value="Jedi Knight Revan">Jedi Knight Revan</option>
-        <option value="Jedi Master Kenobi">Jedi Master Kenobi</option>
-        <option value="Jedi Master Luke Skywalker">Jedi Master Luke Skywalker</option>
-        <option value="Jolee Bindo">Jolee Bindo</option>
-        <option value="Juhani">Juhani</option>
-        <option value="Jyn Erso">Jyn Erso</option>
-        <option value="K-2SO">K-2SO</option>
-        <option value="Kanan Jarrus">Kanan Jarrus</option>
-        <option value="Ki-Adi-Mundi">Ki-Adi-Mundi</option>
-        <option value="Kit Fisto">Kit Fisto</option>
-        <option value="Krrsantan">Krrsantan</option>
-        <option value="Kuiil">Kuiil</option>
-        <option value="Kyle Katarn">Kyle Katarn</option>
-        <option value="Kylo Ren">Kylo Ren</option>
-        <option value="Kylo Ren (Unmasked)">Kylo Ren (Unmasked)</option>
-        <option value="L3-37">L3-37</option>
-        <option value="Lando Calrissian">Lando Calrissian</option>
-        <option value="Leia Organa">Leia Organa</option>
-        <option value="Lobot">Lobot</option>
-        <option value="Logray">Logray</option>
-        <option value="Lord Vader">Lord Vader</option>
-        <option value="Luke Skywalker (Farmboy)">Luke Skywalker (Farmboy)</option>
-        <option value="Luminara Unduli">Luminara Unduli</option>
-        <option value="Mace Windu">Mace Windu</option>
-        <option value="Magmatrooper">Magmatrooper</option>
-        <option value="Mara Jade, The Emperor's Hand">Mara Jade, The Emperor's Hand</option>       
-        <option value="Maul">Maul</option>
-        <option value="Merrin">Merrin</option>
-        <option value="Mission Vao">Mission Vao</option>
-        <option value="Mob Enforcer">Mob Enforcer</option>
-        <option value="Moff Gideon">Moff Gideon</option>
-        <option value="Mon Mothma">Mon Mothma</option>
-        <option value="Mother Talzin">Mother Talzin</option>
-        <option value="Nightsister Acolyte">Nightsister Acolyte</option>
-        <option value="Nightsister Initiate">Nightsister Initiate</option>
-        <option value="Nightsister Spirit">Nightsister Spirit</option>
-        <option value="Nightsister Zombie">Nightsister Zombie</option>
-        <option value="Ninth Sister">Ninth Sister</option>
-        <option value="Nute Gunray">Nute Gunray</option>
-        <option value="Obi-Wan Kenobi (Old Ben)">Obi-Wan Kenobi (Old Ben)</option>
-        <option value="Old Daka">Old Daka</option>
-        <option value="Omega">Omega</option>
-        <option value="Padme Amidala">Padme Amidala</option>
-        <option value="Pao">Pao</option>
-        <option value="Paploo">Paploo</option>
-        <option value="Paz Vizsla">Paz Vizsla</option>
-        <option value="Plo Koon">Plo Koon</option>
-        <option value="Poe Dameron">Poe Dameron</option>
-        <option value="Poggle the Lesser">Poggle the Lesser</option>
-        <option value="Princess Kneesaa">Princess Kneesaa</option>
-        <option value="Princess Leia">Princess Leia</option>
-        <option value="Qi'ra">Qi'ra</option>
-        <option value="Qui-Gon Jinn">Qui-Gon Jinn</option>
-        <option value="R2-D2">R2-D2</option>
-        <option value="Range Trooper">Range Trooper</option>
-        <option value="Rebel Officer Leia Organa">Rebel Officer Leia Organa</option>
-        <option value="Resistance Hero Finn">Resistance Hero Finn</option>
-        <option value="Resistance Hero Poe">Resistance Hero Poe</option>
-        <option value="Resistance Pilot">Resistance Pilot</option>
-        <option value="Resistance Trooper">Resistance Trooper</option>
-        <option value="Rey">Rey</option>
-        <option value="Rey (Jedi Training)">Rey (Jedi Training)</option>
-        <option value="Rey (Scavenger)">Rey (Scavenger)</option>
-        <option value="Rose Tico">Rose Tico</option>
-        <option value="Royal Guard">Royal Guard</option>
-        <option value="Sabine Wren">Sabine Wren</option>
-        <option value="Sana Starros">Sana Starros</option>
-        <option value="Savage Opress">Savage Opress</option>
-        <option value="Saw Gerrera">Saw Gerrera</option>
-        <option value="Scarif Rebel Pathfinder">Scarif Rebel Pathfinder</option>
-        <option value="Scout Trooper">Scout Trooper</option>
-        <option value="Second Sister">Second Sister</option>
-        <option value="Seventh Sister">Seventh Sister</option>
-        <option value="Shaak Ti">Shaak Ti</option>
-        <option value="Shoretrooper">Shoretrooper</option>
-        <option value="Sith Assassin">Sith Assassin</option>
-        <option value="Sith Empire Trooper">Sith Empire Trooper</option>
-        <option value="Sith Eternal Emperor">Sith Eternal Emperor</option>
-        <option value="Sith Marauder">Sith Marauder</option>
-        <option value="Sith Trooper">Sith Trooper</option>
-        <option value="Skiff Guard (Lando Calrissian)">Skiff Guard (Lando Calrissian)</option>     
-        <option value="Snowtrooper">Snowtrooper</option>
-        <option value="Starkiller">Starkiller</option>
-        <option value="Stormtrooper">Stormtrooper</option>
-        <option value="Stormtrooper Han">Stormtrooper Han</option>
-        <option value="Sun Fac">Sun Fac</option>
-        <option value="Supreme Leader Kylo Ren">Supreme Leader Kylo Ren</option>
-        <option value="T3-M4">T3-M4</option>
-        <option value="Talia">Talia</option>
-        <option value="Tarfful">Tarfful</option>
-        <option value="Taron Malicos">Taron Malicos</option>
-        <option value="Tech">Tech</option>
-        <option value="Teebo">Teebo</option>
-        <option value="The Armorer">The Armorer</option>
-        <option value="The Mandalorian">The Mandalorian</option>
-        <option value="The Mandalorian (Beskar Armor)">The Mandalorian (Beskar Armor)</option>     
-        <option value="Third Sister">Third Sister</option>
-        <option value="Threepio & Chewie">Threepio & Chewie</option>
-        <option value="TIE Fighter Pilot">TIE Fighter Pilot</option>
-        <option value="Tusken Chieftain">Tusken Chieftain</option>
-        <option value="Tusken Raider">Tusken Raider</option>
-        <option value="Tusken Shaman">Tusken Shaman</option>
-        <option value="Tusken Warrior">Tusken Warrior</option>
-        <option value="Ugnaught">Ugnaught</option>
-        <option value="URoRRuR'R'R">URoRRuR'R'R</option>
-        <option value="Vandor Chewbacca">Vandor Chewbacca</option>
-        <option value="Veteran Smuggler Chewbacca">Veteran Smuggler Chewbacca</option>
-        <option value="Veteran Smuggler Han Solo">Veteran Smuggler Han Solo</option>
-        <option value="Visas Marr">Visas Marr</option>
-        <option value="Wampa">Wampa</option>
-        <option value="Wat Tambor">Wat Tambor</option>       
-        <option value="Wedge Antilles">Wedge Antilles</option>
-        <option value="Wicket">Wicket</option>
-        <option value="Wrecker">Wrecker</option>
-        <option value="Young Han Solo">Young Han Solo</option>
-        <option value="Young Lando Calrissian">Young Lando Calrissian</option>
-        <option value="Zaalbar">Zaalbar</option>
-        <option value="Zam Wesell">Zam Wesell</option>       
-        <option value="Zorii Bliss">Zorii Bliss</option> 
-      </select>
+  <div class ="sidebar">
+    <div class="top">
+      <div class="logo">
+        <i class="bx bxl-meta"></i>
+        <span>Farming Calculator</span>
+      </div>
     </div>
-    <p>How many stars?</p>
-	  <div>
-      <select id="selectstar" onclick="staramt()">
-       <option value = "choose">choose</option>
-        <option value = "0">0</option>
-        <option value = "10">1</option>
-        <option value = "25">2</option>
-        <option value = "50">3</option>
-        <option value = "80">4</option>
-        <option value = "145">5</option>
-        <option value = "230">6</option>
-        <option value = "330">7</option>
-      </select>
-	  </div>
-	  <p id="starselection"></p>
+        <i class="bx bx-menu" id="btn"></i> 
+      <ul>
+        <li>
+          <a href="#">
+            <i class="bx bx-home"></i>
+            <span class="nav-item" onclick="openMAINTAB(event, 'Home')">Home</span>
+          </a>
+          <span class="tooltip">Home</span>
+        </li> 
+        <li>
+          <a href="#">
+            <i class="bx bx-body"></i>
+            <span class="nav-item" onclick="openMAINTAB(event, 'Characters')">Characters</span>
+          </a>
+          <span class="tooltip">Characters</span>
+        </li>        
+        <li>
+          <a href="#">
+            <i class="bx bxs-plane"></i>
+            <span class="nav-item" onclick="openMAINTAB(event, 'Ships')">Ships</span>
+          </a>
+          <span class="tooltip">Ships</span>
+        </li>
+                <li>
+          <a href="#">
+            <i class="bx bx-envelope"></i>
+            <span class="nav-item" onclick="openMAINTAB(event, 'Temporary')">Placeholder</span>
+          </a>
+          <span class="tooltip">Placeholder</span>
+        </li>
+      </ul>
+  </div>
+  <div class="stars">
+  <div class="main-content">
+    <div class="container">
+      <h1>Star Wars Galaxy of Heroes Farming Calculator</h1>
+      <p>Unit Data last updated on: 11/27/2023</p>
 
-    <p>How many shards?</p>
-    <div>
-      <label for="shardamount">Enter Shard Amount:</label>
-      <input type="number" id="shardamount" name="Shards">
-    </div>
-    <p id="shardamount-display"></p>
-    <p>How many refreshes a day?</p>
-    <div>
-      <label for="refreshamt">Enter refresh amount:</label>
-      <input type="number" id="refreshamt" name="refreshes">
-    </div>
-    <p id="refreshamt-display"></p>
-    <p id="output"></p>
-<script>
-  document.getElementById("shardamount").addEventListener("input", displayShardAmt);
-  document.getElementById("refreshamt").addEventListener("input", displayRefreshAmt);
-</script>
-</div>
+      <div id="Home" class="tabcontent">
+        <h5>How it works</h5>
+        <p>Unit data is added when swgoh.gg updates the character database. 
+          Once a unit is added I update my spreadsheet with the</p><p>
+          character location(s), shards dropped for each node, and 
+          if available through shipments how many shards are available each day.
+        </p><br>
+        <p>
+          To use the calculator simply enter the current star level.
+          This will calculate how many stars are needed to achieve 7 stars.
+          </p><p> enter the current amount of shards you have for the star level.
+          </p><p> if the character is available through nodes enter how many refreshes you will do for the nodes.</p>
+          <p>If days remaining shows up as NaN simply select another character and then select desired character for calculation to reresh</p>
+      </div>
+      
+      <div id="Characters" class="tabcontent">
+        <h3>Characters</h3>
+        <p>Character farming c++ data.</p>
+        <p>Choose a character:</p>  
+          <div>
+            <select id="characterdropdown" onclick="outputCharacterData()">
+              <option value="No Character chosen">choose</option>
+              <option value="0-0-0">0-0-0</option>
+              <option value="50R-T">50R-T</option>
+              <option value="Aayla Secura">Aayla Secura</option>
+              <option value="Admiral Ackbar">Admiral Ackbar</option>
+              <option value="Admiral Piett">Admiral Piett</option>
+              <option value="Admiral Raddus">Admiral Raddus</option>
+              <option value="Admiral Trench">Admiral Trench</option>
+              <option value="Ahsoka Tano">Ahsoka Tano</option>
+              <option value="Ahsoka Tano (Fulcrum)">Ahsoka Tano (Fulcrum)</option>
+              <option value="Amilyn Holdo">Amilyn Holdo</option>
+              <option value="ARC Trooper">ARC Trooper</option>
+              <option value="Asajj Ventress">Asajj Ventress</option>
+              <option value="Aurra Sing">Aurra Sing</option>
+              <option value="B1 Battle Droid">B1 Battle Droid</option>
+              <option value="B2 Super Battle Droid">B2 Super Battle Droid</option>
+              <option value="Barriss Offee">Barriss Offee</option>
+              <option value="Bastila Shan">Bastila Shan</option>
+              <option value="Bastila Shan (Fallen)">Bastila Shan (Fallen)</option>
+              <option value="Baze Malbus">Baze Malbus</option>
+              <option value="BB-8">BB-8</option>
+              <option value="Ben Solo">Ben Solo</option>
+              <option value="Biggs Darklighter">Biggs Darklighter</option>
+              <option value="Bistan">Bistan</option>
+              <option value="Bo-Katan Kryze">Bo-Katan Kryze</option>
+              <option value="Boba Fett">Boba Fett</option>
+              <option value="Boba Fett, Scion of Jango">Boba Fett, Scion of Jango</option>
+              <option value="Bodhi Rook">Bodhi Rook</option>
+              <option value="Bossk">Bossk</option>
+              <option value="Boushh (Leia Organa)">Boushh (Leia Organa)</option>
+              <option value="BT-1">BT-1</option>
+              <option value="C-3PO">C-3PO</option>
+              <option value="Cad Bane">Cad Bane</option>
+              <option value="Cal Kestis">Cal Kestis</option>
+              <option value="Canderous Ordo">Canderous Ordo</option>
+              <option value="Captain Drogan">Captain Drogan</option>
+              <option value="Captain Han Solo">Captain Han Solo</option>
+              <option value="Captain Phasma">Captain Phasma</option>
+              <option value="Captain Rex">Captain Rex</option>
+              <option value="Cara Dune">Cara Dune</option>
+              <option value="Carth Onasi">Carth Onasi</option>
+              <option value="Cassian Andor">Cassian Andor</option>
+              <option value="CC-2224 &quot;Cody&quot;">CC-2224 "Cody"</option>
+              <option value="Cere Junda">Cere Junda</option>
+              <option value="Chewbacca">Chewbacca</option>
+              <option value="Chief Chirpa">Chief Chirpa</option>
+              <option value="Chief Nebit">Chief Nebit</option>
+              <option value="Chirrut ├Ämwe">Chirrut ├Ämwe</option>
+              <option value="Chopper">Chopper</option>
+              <option value="Clone Sergeant - Phase I">Clone Sergeant - Phase I</option>
+              <option value="Clone Wars Chewbacca">Clone Wars Chewbacca</option>
+              <option value="Colonel Starck">Colonel Starck</option>
+              <option value="Commander Ahsoka Tano">Commander Ahsoka Tano</option>
+              <option value="Commander Luke Skywalker">Commander Luke Skywalker</option>
+              <option value="Coruscant Underworld Police">Coruscant Underworld Police</option>
+              <option value="Count Dooku">Count Dooku</option>
+              <option value="CT-21-0408 &quot;Echo&quot;">CT-21-0408 "Echo"</option>
+              <option value="CT-5555 &quot;Fives&quot;">CT-5555 "Fives"</option>
+              <option value="CT-7567 &quot;Rex&quot;">CT-7567 "Rex"</option>
+              <option value="Dark Trooper">Dark Trooper</option>
+              <option value="Dark Trooper Moff Gideon">Dark Trooper Moff Gideon</option>
+              <option value="Darth Malak">Darth Malak</option>
+              <option value="Darth Malgus">Darth Malgus</option>
+              <option value="Darth Maul">Darth Maul</option>
+              <option value="Darth Nihilus">Darth Nihilus</option>
+              <option value="Darth Revan">Darth Revan</option>
+              <option value="Darth Sidious">Darth Sidious</option>
+              <option value="Darth Sion">Darth Sion</option>
+              <option value="Darth Talon">Darth Talon</option>
+              <option value="Darth Traya">Darth Traya</option>
+              <option value="Darth Vader">Darth Vader</option>
+              <option value="Dash Rendar">Dash Rendar</option>
+              <option value="Dathcha">Dathcha</option>
+              <option value="Death Trooper">Death Trooper</option>
+              <option value="Dengar">Dengar</option>
+              <option value="Director Krennic">Director Krennic</option>
+              <option value="Doctor Aphra">Doctor Aphra</option>
+              <option value="Droideka">Droideka</option>
+              <option value="Echo">Echo</option>
+              <option value="Eeth Koth">Eeth Koth</option>
+              <option value="Eighth Brother">Eighth Brother</option>
+              <option value="Embo">Embo</option>
+              <option value="Emperor Palpatine">Emperor Palpatine</option>
+              <option value="Enfys Nest">Enfys Nest</option>
+              <option value="Ewok Elder">Ewok Elder</option>
+              <option value="Ewok Scout">Ewok Scout</option>
+              <option value="Ezra Bridger">Ezra Bridger</option>
+              <option value="Fennec Shand">Fennec Shand</option>
+              <option value="Fifth Brother">Fifth Brother</option>
+              <option value="Finn">Finn</option>
+              <option value="First Order Executioner">First Order Executioner</option>
+              <option value="First Order Officer">First Order Officer</option>
+              <option value="First Order SF TIE Pilot">First Order SF TIE Pilot</option>
+              <option value="First Order Stormtrooper">First Order Stormtrooper</option>
+              <option value="First Order TIE Pilot">First Order TIE Pilot</option>
+              <option value="Gamorrean Guard">Gamorrean Guard</option>
+              <option value="Gar Saxon">Gar Saxon</option>
+              <option value="Garazeb &quot;Zeb&quot; Orrelios">Garazeb "Zeb" Orrelios</option>
+              <option value="General Grievous">General Grievous</option>
+              <option value="General Hux">General Hux</option>
+              <option value="General Kenobi">General Kenobi</option>
+              <option value="General Skywalker">General Skywalker</option>
+              <option value="General Veers">General Veers</option>
+              <option value="Geonosian Brood Alpha">Geonosian Brood Alpha</option>
+              <option value="Geonosian Soldier">Geonosian Soldier</option>
+              <option value="Geonosian Spy">Geonosian Spy</option>
+              <option value="Grand Admiral Thrawn">Grand Admiral Thrawn</option>
+              <option value="Grand Inquisitor">Grand Inquisitor</option>
+              <option value="Grand Master Yoda">Grand Master Yoda</option>
+              <option value="Grand Moff Tarkin">Grand Moff Tarkin</option>
+              <option value="Greedo">Greedo</option>
+              <option value="Greef Karga">Greef Karga</option>
+              <option value="Han Solo">Han Solo</option>
+              <option value="Hera Syndulla">Hera Syndulla</option>
+              <option value="Hermit Yoda">Hermit Yoda</option>
+              <option value="HK-47">HK-47</option>
+              <option value="Hondo Ohnaka">Hondo Ohnaka</option>
+              <option value="Hoth Rebel Scout">Hoth Rebel Scout</option>
+              <option value="Hoth Rebel Soldier">Hoth Rebel Soldier</option>
+              <option value="Hunter">Hunter</option>
+              <option value="Iden Versio">Iden Versio</option>
+              <option value="IG-100 MagnaGuard">IG-100 MagnaGuard</option>
+              <option value="IG-11">IG-11</option>
+              <option value="IG-12 & Grogu">IG-12 & Grogu</option>
+              <option value="IG-86 Sentinel Droid">IG-86 Sentinel Droid</option>
+              <option value="IG-88">IG-88</option>
+              <option value="Ima-Gun Di">Ima-Gun Di</option>
+              <option value="Imperial Probe Droid">Imperial Probe Droid</option>
+              <option value="Imperial Super Commando">Imperial Super Commando</option>
+              <option value="Jabba the Hutt">Jabba the Hutt</option>
+              <option value="Jango Fett">Jango Fett</option>
+              <option value="Jawa">Jawa</option>
+              <option value="Jawa Engineer">Jawa Engineer</option>
+              <option value="Jawa Scavenger">Jawa Scavenger</option>
+              <option value="Jedi Consular">Jedi Consular</option>
+              <option value="Jedi Knight Anakin">Jedi Knight Anakin</option>
+              <option value="Jedi Knight Cal Kestis">Jedi Knight Cal Kestis</option>
+              <option value="Jedi Knight Guardian">Jedi Knight Guardian</option>
+              <option value="Jedi Knight Luke Skywalker">Jedi Knight Luke Skywalker</option>
+              <option value="Jedi Knight Revan">Jedi Knight Revan</option>
+              <option value="Jedi Master Kenobi">Jedi Master Kenobi</option>
+              <option value="Jedi Master Luke Skywalker">Jedi Master Luke Skywalker</option>
+              <option value="Jolee Bindo">Jolee Bindo</option>
+              <option value="Juhani">Juhani</option>
+              <option value="Jyn Erso">Jyn Erso</option>
+              <option value="K-2SO">K-2SO</option>
+              <option value="Kanan Jarrus">Kanan Jarrus</option>
+              <option value="Ki-Adi-Mundi">Ki-Adi-Mundi</option>
+              <option value="Kit Fisto">Kit Fisto</option>
+              <option value="Krrsantan">Krrsantan</option>
+              <option value="Kuiil">Kuiil</option>
+              <option value="Kyle Katarn">Kyle Katarn</option>
+              <option value="Kylo Ren">Kylo Ren</option>
+              <option value="Kylo Ren (Unmasked)">Kylo Ren (Unmasked)</option>
+              <option value="L3-37">L3-37</option>
+              <option value="Lando Calrissian">Lando Calrissian</option>
+              <option value="Leia Organa">Leia Organa</option>
+              <option value="Lobot">Lobot</option>
+              <option value="Logray">Logray</option>
+              <option value="Lord Vader">Lord Vader</option>
+              <option value="Luke Skywalker (Farmboy)">Luke Skywalker (Farmboy)</option>
+              <option value="Luminara Unduli">Luminara Unduli</option>
+              <option value="Mace Windu">Mace Windu</option>
+              <option value="Magmatrooper">Magmatrooper</option>
+              <option value="Mara Jade, The Emperor's Hand">Mara Jade, The Emperor's Hand</option>       
+              <option value="Maul">Maul</option>
+              <option value="Merrin">Merrin</option>
+              <option value="Mission Vao">Mission Vao</option>
+              <option value="Mob Enforcer">Mob Enforcer</option>
+              <option value="Moff Gideon">Moff Gideon</option>
+              <option value="Mon Mothma">Mon Mothma</option>
+              <option value="Mother Talzin">Mother Talzin</option>
+              <option value="Nightsister Acolyte">Nightsister Acolyte</option>
+              <option value="Nightsister Initiate">Nightsister Initiate</option>
+              <option value="Nightsister Spirit">Nightsister Spirit</option>
+              <option value="Nightsister Zombie">Nightsister Zombie</option>
+              <option value="Ninth Sister">Ninth Sister</option>
+              <option value="Nute Gunray">Nute Gunray</option>
+              <option value="Obi-Wan Kenobi (Old Ben)">Obi-Wan Kenobi (Old Ben)</option>
+              <option value="Old Daka">Old Daka</option>
+              <option value="Omega">Omega</option>
+              <option value="Padme Amidala">Padme Amidala</option>
+              <option value="Pao">Pao</option>
+              <option value="Paploo">Paploo</option>
+              <option value="Paz Vizsla">Paz Vizsla</option>
+              <option value="Plo Koon">Plo Koon</option>
+              <option value="Poe Dameron">Poe Dameron</option>
+              <option value="Poggle the Lesser">Poggle the Lesser</option>
+              <option value="Princess Kneesaa">Princess Kneesaa</option>
+              <option value="Princess Leia">Princess Leia</option>
+              <option value="Qi'ra">Qi'ra</option>
+              <option value="Qui-Gon Jinn">Qui-Gon Jinn</option>
+              <option value="R2-D2">R2-D2</option>
+              <option value="Range Trooper">Range Trooper</option>
+              <option value="Rebel Officer Leia Organa">Rebel Officer Leia Organa</option>
+              <option value="Resistance Hero Finn">Resistance Hero Finn</option>
+              <option value="Resistance Hero Poe">Resistance Hero Poe</option>
+              <option value="Resistance Pilot">Resistance Pilot</option>
+              <option value="Resistance Trooper">Resistance Trooper</option>
+              <option value="Rey">Rey</option>
+              <option value="Rey (Jedi Training)">Rey (Jedi Training)</option>
+              <option value="Rey (Scavenger)">Rey (Scavenger)</option>
+              <option value="Rose Tico">Rose Tico</option>
+              <option value="Royal Guard">Royal Guard</option>
+              <option value="Sabine Wren">Sabine Wren</option>
+              <option value="Sana Starros">Sana Starros</option>
+              <option value="Savage Opress">Savage Opress</option>
+              <option value="Saw Gerrera">Saw Gerrera</option>
+              <option value="Scarif Rebel Pathfinder">Scarif Rebel Pathfinder</option>
+              <option value="Scout Trooper">Scout Trooper</option>
+              <option value="Second Sister">Second Sister</option>
+              <option value="Seventh Sister">Seventh Sister</option>
+              <option value="Shaak Ti">Shaak Ti</option>
+              <option value="Shoretrooper">Shoretrooper</option>
+              <option value="Sith Assassin">Sith Assassin</option>
+              <option value="Sith Empire Trooper">Sith Empire Trooper</option>
+              <option value="Sith Eternal Emperor">Sith Eternal Emperor</option>
+              <option value="Sith Marauder">Sith Marauder</option>
+              <option value="Sith Trooper">Sith Trooper</option>
+              <option value="Skiff Guard (Lando Calrissian)">Skiff Guard (Lando Calrissian)</option>     
+              <option value="Snowtrooper">Snowtrooper</option>
+              <option value="Starkiller">Starkiller</option>
+              <option value="Stormtrooper">Stormtrooper</option>
+              <option value="Stormtrooper Han">Stormtrooper Han</option>
+              <option value="Sun Fac">Sun Fac</option>
+              <option value="Supreme Leader Kylo Ren">Supreme Leader Kylo Ren</option>
+              <option value="T3-M4">T3-M4</option>
+              <option value="Talia">Talia</option>
+              <option value="Tarfful">Tarfful</option>
+              <option value="Taron Malicos">Taron Malicos</option>
+              <option value="Tech">Tech</option>
+              <option value="Teebo">Teebo</option>
+              <option value="The Armorer">The Armorer</option>
+              <option value="The Mandalorian">The Mandalorian</option>
+              <option value="The Mandalorian (Beskar Armor)">The Mandalorian (Beskar Armor)</option>     
+              <option value="Third Sister">Third Sister</option>
+              <option value="Threepio & Chewie">Threepio & Chewie</option>
+              <option value="TIE Fighter Pilot">TIE Fighter Pilot</option>
+              <option value="Tusken Chieftain">Tusken Chieftain</option>
+              <option value="Tusken Raider">Tusken Raider</option>
+              <option value="Tusken Shaman">Tusken Shaman</option>
+              <option value="Tusken Warrior">Tusken Warrior</option>
+              <option value="Ugnaught">Ugnaught</option>
+              <option value="URoRRuR'R'R">URoRRuR'R'R</option>
+              <option value="Vandor Chewbacca">Vandor Chewbacca</option>
+              <option value="Veteran Smuggler Chewbacca">Veteran Smuggler Chewbacca</option>
+              <option value="Veteran Smuggler Han Solo">Veteran Smuggler Han Solo</option>
+              <option value="Visas Marr">Visas Marr</option>
+              <option value="Wampa">Wampa</option>
+              <option value="Wat Tambor">Wat Tambor</option>       
+              <option value="Wedge Antilles">Wedge Antilles</option>
+              <option value="Wicket">Wicket</option>
+              <option value="Wrecker">Wrecker</option>
+              <option value="Young Han Solo">Young Han Solo</option>
+              <option value="Young Lando Calrissian">Young Lando Calrissian</option>
+              <option value="Zaalbar">Zaalbar</option>
+              <option value="Zam Wesell">Zam Wesell</option>       
+              <option value="Zorii Bliss">Zorii Bliss</option> 
+            </select>
+          </div>
+          <p>How many stars?</p>
+          <div>
+            <select id="selectstar" onchange="staramt()">
+             <option value = "choose">choose</option>
+              <option value = "0">0</option>
+              <option value = "10">1</option>
+              <option value = "25">2</option>
+              <option value = "50">3</option>
+              <option value = "80">4</option>
+              <option value = "145">5</option>
+              <option value = "230">6</option>
+              <option value = "330">7</option>
+            </select>
+          </div>
+          <p id="starselection"></p>
+      
+          <p>How many shards?</p>
+          <div>
+            <label for="shardamount">Enter Shard Amount:</label>
+            <input type="number" id="shardamount" name="Shards">
+          </div>
+          <p id="shardamount-display"></p>
+          <p>How many refreshes a day?</p>
+          <div>
+            <label for="refreshamt">Enter refresh amount:</label>
+            <input type="number" id="refreshamt" name="refreshes">
+          </div>
+          <p id="refreshamt-display"></p>
+          <p id="output"></p>
 
-<div id="Ships" class="tabcontent">
-  <h4>Ships</h4>
-  <p>Ship Calculator Coming Soon</p>
-</div>
-
-<div id="Temporary" class="tabcontent">
-  <h4>Temporary</h4>
-</div>
+      </div>
+      
+      <div id="Ships" class="tabcontent">
+        <h4>Ships</h4>
+        <p>Ship Calculator Coming Soon</p>
+      </div>
+      
+      <div id="Temporary" class="tabcontent">
+        <h4>Temporary</h4>
+      </div>
+      
+  </div>
+  </div>
+  </div>
+  <script src="test.js"></script>
 </body>
 </html>
