@@ -1,3 +1,4 @@
 # SWGOH-Calc-Website
 SWGOH Website
-This is not a full website and is not ready to be published. Just the frame of the website and got all of the calculations and dropdown menus to work. Will add visual things later.
+Some data is outdated and must be double checked but most of it is updated as of 11/28/2023.
+Will update once bo katan epic confrontation releases or end of december 2023.
