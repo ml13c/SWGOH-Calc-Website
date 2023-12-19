@@ -1,8 +1,13 @@
+//character presetdata
 let finalshardsremaining = 330;
 const droprate=.33;
 var BattleAmt;
 var finalshardAmt;
-//
+//ship presetdata
+let shipfinalshardsremaining = 330;
+var shipBattleAmt;
+var shipfinalshardAmt;
+//tab funcitonality display
 function openMAINTAB(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -16,7 +21,7 @@ function openMAINTAB(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
+//star selection functionality
 function staramt() {
     let shardsremaining = 330;
     var select = document.getElementById("selectstar");
@@ -91,7 +96,81 @@ function staramt() {
         break;
     }
   }
-
+  function staramtship() {
+    let shardsremaining = 330;
+    var select = document.getElementById("selectstarship");
+    var y = parseInt(select.value);
+    document.getElementById("starselectionship").innerHTML = "Star shards amt: "+ y;
+    shardsremaining -= y;
+    switch (y){
+     case "choose":
+      var p = document.createElement("p");
+      p.innerHTML = "select star amount";
+      document.getElementById("starselectionship").appendChild(p);
+      shipfinalshardsremaining = 330-0;
+      shardsremaining=330;
+        break;
+      case 0:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-0;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+        break;
+      case 10:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-10;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+        break;
+        case 25:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-25;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+        break;
+      case 50:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-50;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+        break;
+      case 80:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-80;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+      break;
+      case 145:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-145;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+        break;
+      case 230:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-230;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+        break;
+      case 330:
+        var p = document.createElement("p");
+        p.innerHTML = "Shards Remaining: "+ shardsremaining;
+        shipfinalshardsremaining = 330-330;
+        document.getElementById("starselectionship").appendChild(p);
+        shardsremaining=330;
+        break;
+      default:
+        break;
+    }
+  }
+//Data
   const swgohMap = new Map([
     ["0-0-0", {Charactername: "0-0-0", Location: "Dark Side Battles: 2-A (Hard)", Nodeamount: 1 , NodeShardamount: 1 , charactershipmentshardamount: 0 ,}],
     ["50R-T", {Charactername: "50R-T", Location: "Dark Side Battles: 3-E (Hard)", Nodeamount: 1 , NodeShardamount: 2 , charactershipmentshardamount: 0 ,}],
@@ -350,7 +429,75 @@ function staramt() {
     ["Zam Wesell", {Charactername: "Zam Wesell", Location: "Fleet Arena Store,Guild Activity Store", Nodeamount: 0 , NodeShardamount: 0 , charactershipmentshardamount: 5 ,}],
     ["Zorii Bliss", {Charactername: "Zorii Bliss", Location: "Dark Side Battles: 1-C (Hard)", Nodeamount: 1 , NodeShardamount: 2 , charactershipmentshardamount: 0 ,}],
   ]);
-
+  const shipsswgohMap = new Map([
+  ["Ahsoka Tano's Jedi Starfighter", {Shipname: "Ahsoka Tano's Jedi Starfighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}], 
+["Anakin's Eta-2 Starfighter", {Shipname: "Anakin's Eta-2 Starfighter", SLocation: "Fleet Battles: 1-B (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],  
+["B-28 Extinction-class Bomber", {Shipname: "B-28 Extinction-class Bomber", SLocation: "Light Side Battles: 6-C (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Biggs Darklighter's X-wing", {Shipname: "Biggs Darklighter's X-wing", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Bistan's U-wing", {Shipname: "Bistan's U-wing", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["BTL-B Y-wing Starfighter", {Shipname: "BTL-B Y-wing Starfighter", SLocation: "Light Side Battles: 7-C (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}], 
+["Cassian's U-wing", {Shipname: "Cassian's U-wing", SLocation: "Cantina Battles Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Chimaera", {Shipname: "Chimaera", SLocation: "Imperial Chimaera", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["Clone Sergeant's ARC-170", {Shipname: "Clone Sergeant's ARC-170", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Ebon Hawk", {Shipname: "Ebon Hawk", SLocation: "Cantina Battles: 8-E", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Emperor's Shuttle", {Shipname: "Emperor's Shuttle", SLocation: "Dark Side Battles: 7-D (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Endurance", {Shipname: "Endurance", SLocation: "Capital Ship Upgrades - Mace Windu", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.330000 ,}],
+["Executor", {Shipname: "Executor", SLocation: "Discarded Doctrine", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["Executrix", {Shipname: "Executrix", SLocation: "Capital Ship Upgrades - Grand Moff Tarkin", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.330000 ,}],
+["Finalizer", {Shipname: "Finalizer", SLocation: "General's Command", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["First Order SF TIE Fighter", {Shipname: "First Order SF TIE Fighter", SLocation: "Guild Activity Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],       
+["First Order TIE Fighter", {Shipname: "First Order TIE Fighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Fury-class Interceptor", {Shipname: "Fury-class Interceptor", SLocation: "Conquest", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Gauntlet Starfighter", {Shipname: "Gauntlet Starfighter", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Geonosian Soldier's Starfighter", {Shipname: "Geonosian Soldier's Starfighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Geonosian Spy's Starfighter", {Shipname: "Geonosian Spy's Starfighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],       
+["Ghost", {Shipname: "Ghost", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Han's Millennium Falcon", {Shipname: "Han's Millennium Falcon", SLocation: "Flight of the Falcon", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["Home One", {Shipname: "Home One", SLocation: "Capital Ship Upgrades - Admiral Ackbar", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.330000 ,}],
+["Hound's Tooth", {Shipname: "Hound's Tooth", SLocation: "Light Side Battles: 8-D (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Hyena Bomber", {Shipname: "Hyena Bomber", SLocation: "Dark Side Battles: 8-B (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["IG-2000", {Shipname: "IG-2000", SLocation: "Light Side Battles: 6-E (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Imperial TIE Bomber", {Shipname: "Imperial TIE Bomber", SLocation: "Dark Side Battles: 5-A (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Imperial TIE Fighter", {Shipname: "Imperial TIE Fighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Jedi Consular's Starfighter", {Shipname: "Jedi Consular's Starfighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],       
+["Kylo Ren's Command Shuttle", {Shipname: "Kylo Ren's Command Shuttle", SLocation: "Light Side Battles: 9-A (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Lando's Millennium Falcon", {Shipname: "Lando's Millennium Falcon", SLocation: "Fleet Battles: 1-D (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],    
+["Leviathan", {Shipname: "Leviathan", SLocation: "Journey Guide", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Malevolence", {Shipname: "Malevolence", SLocation: "Guild Events Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Marauder", {Shipname: "Marauder", SLocation: "n/a", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["Mark VI Interceptor", {Shipname: "Mark VI Interceptor", SLocation: "n/a", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["MG-100 StarFortress SF-17", {Shipname: "MG-100 StarFortress SF-17", SLocation: "Fleet Battles: 2-D (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],    
+["Negotiator", {Shipname: "Negotiator", SLocation: "Guild Events Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Outrider", {Shipname: "Outrider", SLocation: "Fleet Battles: 3-C (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Phantom II", {Shipname: "Phantom II", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Plo Koon's Jedi Starfighter", {Shipname: "Plo Koon's Jedi Starfighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],       
+["Poe Dameron's X-wing", {Shipname: "Poe Dameron's X-wing", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Profundity", {Shipname: "Profundity", SLocation: "Stardust Transmission", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["Raddus", {Shipname: "Raddus", SLocation: "Admiral's Maneuver", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["Raven's Claw", {Shipname: "Raven's Claw", SLocation: "Fleet Battles: 2-E (Hard)", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["Razor Crest", {Shipname: "Razor Crest", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Rebel Y-wing", {Shipname: "Rebel Y-wing", SLocation: "Fleet Battles: 4-C (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Resistance X-wing", {Shipname: "Resistance X-wing", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Rex's ARC-170", {Shipname: "Rex's ARC-170", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Rey's Millennium Falcon", {Shipname: "Rey's Millennium Falcon", SLocation: "Dark Side Battles: 5-D (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],    
+["Scimitar", {Shipname: "Scimitar", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Scythe", {Shipname: "Scythe", SLocation: "Conquest Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Sith Fighter", {Shipname: "Sith Fighter", SLocation: "Fleet Battles: 3-E (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Slave I", {Shipname: "Slave I", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Sun Fac's Geonosian Starfighter", {Shipname: "Sun Fac's Geonosian Starfighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["TIE Advanced x1", {Shipname: "TIE Advanced x1", SLocation: "Fleet Arena Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["TIE Dagger", {Shipname: "TIE Dagger", SLocation: "n/a", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 0.000000 ,}],
+["TIE Defender", {Shipname: "TIE Defender", SLocation: "Fleet Battles: 3-B (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["TIE Echelon", {Shipname: "TIE Echelon", SLocation: "Fleet Battles: 4-E (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["TIE Reaper", {Shipname: "TIE Reaper", SLocation: "Light Side Battles: 9-B (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["TIE Silencer", {Shipname: "TIE Silencer", SLocation: "Cantina Battles: 3-F", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["TIE/IN Interceptor Prototype", {Shipname: "TIE/IN Interceptor Prototype", SLocation: "Proving Grounds", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],        
+["Umbaran Starfighter", {Shipname: "Umbaran Starfighter", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Vulture Droid", {Shipname: "Vulture Droid", SLocation: "Light Side Battles: 4-D (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+["Wedge Antilles's X-wing", {Shipname: "Wedge Antilles's X-wing", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
+["Xanadu Blood", {Shipname: "Xanadu Blood", SLocation: "Light Side Battles: 8-B (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
+  ]);
+//Character Tab
 function displayRefreshAmt() {
     var refreshAmt = document.getElementById("refreshamt").value;
     BattleAmt = 5 + (5 * refreshAmt);
@@ -362,7 +509,7 @@ function displayShardAmt() {
     document.getElementById("shardamount-display").innerHTML = "Current Star Level Shards: " + shardAmt;
     }
 
-    function outputCharacterData() {
+function outputCharacterData() {
     const key = document.getElementById("characterdropdown").value;
     const values = [];
     for (const [k, v] of swgohMap.entries()) {
@@ -371,13 +518,51 @@ function displayShardAmt() {
         values.push("Location: "+ v.Location+": , ");
         values.push("Will obtain "+ (finalshardsremaining-finalshardAmt)+" shards in:");
         values.push(daystofarm= ((finalshardsremaining-finalshardAmt)/((v.Nodeamount)*(BattleAmt)*(droprate)*(v.NodeShardamount)+(v.charactershipmentshardamount))).toFixed(1)+ " days")
-    }
+        if(v.Nodeamount==0){
+          values.push("This unit is not accessible through energy nodes");
+        }
+      }
     }
     document.getElementById("output").innerHTML = values.join("<br>");
   }
 
   document.getElementById("shardamount").addEventListener("input", displayShardAmt);
   document.getElementById("refreshamt").addEventListener("input", displayRefreshAmt);
+
+//Ship Tab
+function displayShipRefreshAmt() {
+    var refreshAmt = document.getElementById("refreshamtship").value;
+    shipBattleAmt = 5 + (5 * refreshAmt);
+    document.getElementById("refreshamtship-display").innerHTML = "Total Battles: " + shipBattleAmt;
+    }
+function displayShipShardAmt() {
+      var shardAmt = document.getElementById("shardamountship").value;
+      shipfinalshardAmt = shardAmt;
+      document.getElementById("shardamountship-display").innerHTML = "Current Star Level Shards: " + shardAmt;
+      }
+function outputShipData(){
+  const key = document.getElementById("shipdropdown").value;
+  const values = [];
+  for (const [k, v] of shipsswgohMap.entries()) {
+    if (k === key) {
+      values.push("Ship: "+ v.Shipname+", ");
+      values.push("Location: "+ v.SLocation+": , ");
+      values.push("Will obtain "+ (shipfinalshardsremaining-shipfinalshardAmt)+" shards in:");
+      values.push(sdaystofarm= ((shipfinalshardsremaining-shipfinalshardAmt)/((v.SNodeamount)*(shipBattleAmt)*(droprate)*(v.SNodeShardamount)+(v.sshipmentshardamount))).toFixed(1)+ " days")
+      if(v.SNodeamount==0){
+        values.push("This unit is not accessible through energy nodes");
+      }
+    }
+  }
+  document.getElementById("shipoutput").innerHTML = values.join("<br>");
+}
+document.getElementById("shardamountship").addEventListener("input", displayShipShardAmt);
+document.getElementById("refreshamtship").addEventListener("input", displayShipRefreshAmt);
+
+//unit not accessible through battles
+if(BattleAmt==0||shipBattleAmt==0){
+
+}
 
 //sidebar
 let btn = document.querySelector('#btn')
