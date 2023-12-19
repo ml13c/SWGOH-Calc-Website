@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Wars Galaxy of Heroes Farming Calculator</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="stle.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <div class ="sidebar">
     <div class="top">
       <div class="logo">
@@ -42,9 +43,9 @@
                 <li>
           <a href="#">
             <i class="bx bx-envelope"></i>
-            <span class="nav-item" onclick="openMAINTAB(event, 'Temporary')">Placeholder</span>
+            <span class="nav-item" onclick="openMAINTAB(event, 'Contact')">Contact</span>
           </a>
-          <span class="tooltip">Placeholder</span>
+          <span class="tooltip">Contact</span>
         </li>
       </ul>
   </div>
@@ -335,6 +336,7 @@
               <option value="Zorii Bliss">Zorii Bliss</option> 
             </select>
           </div>
+
           <p>How many stars?</p>
           <div>
             <select id="selectstar" onchange="staramt()">
@@ -369,16 +371,121 @@
       
       <div id="Ships" class="tabcontent">
         <h4>Ships</h4>
-        <p>Ship Calculator Coming Soon</p>
+        <p>Choose a ship:</p>
+        <div>
+          <select id="shipdropdown" onclick="outputShipData()">
+            <option value="No Character Chosen">choose</option>
+            <option value="Ahsoka Tano's Jedi Starfighter">Ahsoka Tano's Jedi Starfighter</option>
+            <option value="Anakin's Eta-2 Starfighter">Anakin's Eta-2 Starfighter</option>
+            <option value="B-28 Extinction-class Bomber">B-28 Extinction-class Bomber</option>
+            <option value="Biggs Darklighter's X-wing">Biggs Darklighter's X-wing</option>
+            <option value="Bistan's U-wing">Bistan's U-wing</option>
+            <option value="BTL-B Y-wing Starfighter">BTL-B Y-wing Starfighter</option>
+            <option value="Cassian's U-wing">Cassian's U-wing</option>
+            <option value="Chimaera">Chimaera</option>
+            <option value="Clone Sergeant's ARC-170">Clone Sergeant's ARC-170</option>
+            <option value="Ebon Hawk">Ebon Hawk</option>
+            <option value="Emperor's Shuttle">Emperor's Shuttle</option>
+            <option value="Endurance">Endurance</option>
+            <option value="Executor">Executor</option>
+            <option value="Executrix">Executrix</option>
+            <option value="Finalizer">Finalizer</option>
+            <option value="First Order SF TIE Fighter">First Order SF TIE Fighter</option>
+            <option value="First Order TIE Fighter">First Order TIE Fighter</option>
+            <option value="Fury-class Interceptor">Fury-class Interceptor</option>
+            <option value="Gauntlet Starfighter">Gauntlet Starfighter</option>
+            <option value="Geonosian Soldier's Starfighter">Geonosian Soldier's Starfighter</option>
+            <option value="Geonosian Spy's Starfighter">Geonosian Spy's Starfighter</option>
+            <option value="Ghost">Ghost</option>
+            <option value="Han's Millennium Falcon">Han's Millennium Falcon</option>
+            <option value="Home One">Home One</option>
+            <option value="Hound's Tooth">Hound's Tooth</option>
+            <option value="Hyena Bomber">Hyena Bomber</option>
+            <option value="IG-2000">IG-2000</option>
+            <option value="Imperial TIE Bomber">Imperial TIE Bomber</option>
+            <option value="Imperial TIE Fighter">Imperial TIE Fighter</option>
+            <option value="Jedi Consular's Starfighter">Jedi Consular's Starfighter</option>
+            <option value="Kylo Ren's Command Shuttle">Kylo Ren's Command Shuttle</option>
+            <option value="Lando's Millennium Falcon">Lando's Millennium Falcon</option>
+            <option value="Leviathan">Leviathan</option>
+            <option value="Malevolence">Malevolence</option>
+            <option value="Marauder">Marauder</option>
+            <option value="Mark VI Interceptor">Mark VI Interceptor</option>
+            <option value="MG-100 StarFortress SF-17">MG-100 StarFortress SF-17</option>
+            <option value="Negotiator">Negotiator</option>
+            <option value="Outrider">Outrider</option>
+            <option value="Phantom II">Phantom II</option>
+            <option value="Plo Koon's Jedi Starfighter">Plo Koon's Jedi Starfighter</option>
+            <option value="Poe Dameron's X-wing">Poe Dameron's X-wing</option>
+            <option value="Profundity">Profundity</option>
+            <option value="Raddus">Raddus</option>
+            <option value="Raven's Claw">Raven's Claw</option>
+            <option value="Razor Crest">Razor Crest</option>
+            <option value="Rebel Y-wing">Rebel Y-wing</option>
+            <option value="Resistance X-wing">Resistance X-wing</option>
+            <option value="Rex's ARC-170">Rex's ARC-170</option>
+            <option value="Rey's Millennium Falcon">Rey's Millennium Falcon</option>
+            <option value="Scimitar">Scimitar</option>
+            <option value="Scythe">Scythe</option>
+            <option value="Sith Fighter">Sith Fighter</option>
+            <option value="Slave I">Slave I</option>
+            <option value="Sun Fac's Geonosian Starfighter">Sun Fac's Geonosian Starfighter</option>
+            <option value="TIE Advanced x1">TIE Advanced x1</option>
+            <option value="TIE Dagger">TIE Dagger</option>
+            <option value="TIE Defender">TIE Defender</option>
+            <option value="TIE Echelon">TIE Echelon</option>
+            <option value="TIE Reaper">TIE Reaper</option>
+            <option value="TIE Silencer">TIE Silencer</option>
+            <option value="TIE/IN Interceptor Prototype">TIE/IN Interceptor Prototype</option>
+            <option value="Umbaran Starfighter">Umbaran Starfighter</option>
+            <option value="Vulture Droid">Vulture Droid</option>
+            <option value="Wedge Antilles's X-wing">Wedge Antilles's X-wing</option>
+            <option value="Xanadu Blood">Xanadu Blood</option>
+          </select>
+        </div>
+
+        <p>How many stars?</p>
+        <div>
+          <select id="selectstarship" onchange="staramtship()">
+           <option value = "choose">choose</option>
+            <option value = "0">0</option>
+            <option value = "10">1</option>
+            <option value = "25">2</option>
+            <option value = "50">3</option>
+            <option value = "80">4</option>
+            <option value = "145">5</option>
+            <option value = "230">6</option>
+            <option value = "330">7</option>
+          </select>
+        </div>
+        <p id="starselectionship"></p>
+      
+        <p>How many shards?</p>
+        <div>
+          <label for="shardamount">Enter Shard Amount:</label>
+          <input type="number" id="shardamountship" name="Shards">
+        </div>
+        <p id="shardamountship-display"></p>
+        <p>How many refreshes a day?</p>
+        <div>
+          <label for="refreshamtship">Enter refresh amount:</label>
+          <input type="number" id="refreshamtship" name="refreshes">
+        </div>
+        <p id="refreshamtship-display"></p>
+        <p id="shipoutput"></p>
+      </div>
+        <div id="Contact" class="tabcontent">
+        <h4>Please email any suggestions or issues of website to this email</h4>
+        <a href="mailto:farmingcalculatorswg@gmail.com">farmingcalculatorswg@gmail.com</a>
+
       </div>
       
-      <div id="Temporary" class="tabcontent">
-        <h4>Temporary</h4>
-      </div>
-      
+      <footer>
+        <p>Star Wars Galaxy of Heroes Farming Calculator is not affiliated with with EA, EA Capital Games, Disney or Lucasfilm LTD.</p>
+      </footer>
   </div>
   </div>
   </div>
-  <script src="test.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
