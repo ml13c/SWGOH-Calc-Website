@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farming Calculator-Star Wars Galaxy of Heroes</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stle.css">
 </head>
 <body>
-  
   <div class ="sidebar">
     <div class="top">
       <div class="logo">
         <i class="bx bxl-meta"></i>
-        <span>SWGOH Farming Calculator</span>
+        <span>Farming Calculator</span>
       </div>
     </div>
         <i class="bx bx-menu" id="btn"></i> 
@@ -50,9 +49,10 @@
       </ul>
   </div>
   <div class="stars">
+  <div class="scroll-container">
   <div class="main-content">
     <div class="container">
-      <h1>Star Wars Galaxy of Heroes Farming Calculator</h1>
+      <h1>SWGOH Farming Calculator</h1>
       <p>Unit Data last updated on: 11/27/2023</p>
 
       <div id="Home" class="tabcontent">
@@ -75,7 +75,7 @@
         <p>Character farming c++ data.</p>
         <p>Choose a character:</p>  
           <div>
-            <select id="characterdropdown" onclick="outputCharacterData()">
+            <select id="characterdropdown">
               <option value="No Character chosen">choose</option>
               <option value="0-0-0">0-0-0</option>
               <option value="50R-T">50R-T</option>
@@ -339,7 +339,7 @@
 
           <p>How many stars?</p>
           <div>
-            <select id="selectstar" onchange="staramt()">
+            <select id="selectstar">
              <option value = "choose">choose</option>
               <option value = "0">0</option>
               <option value = "10">1</option>
@@ -366,14 +366,14 @@
           </div>
           <p id="refreshamt-display"></p>
           <p id="output"></p>
-
+          <button onchange="staramt()" onclick="outputCharacterData()">Submit</button>
       </div>
       
       <div id="Ships" class="tabcontent">
         <h4>Ships</h4>
         <p>Choose a ship:</p>
         <div>
-          <select id="shipdropdown" onclick="outputShipData()">
+          <select id="shipdropdown">
             <option value="No Character Chosen">choose</option>
             <option value="Ahsoka Tano's Jedi Starfighter">Ahsoka Tano's Jedi Starfighter</option>
             <option value="Anakin's Eta-2 Starfighter">Anakin's Eta-2 Starfighter</option>
@@ -446,7 +446,7 @@
 
         <p>How many stars?</p>
         <div>
-          <select id="selectstarship" onchange="staramtship()">
+          <select id="selectstarship">
            <option value = "choose">choose</option>
             <option value = "0">0</option>
             <option value = "10">1</option>
@@ -473,19 +473,21 @@
         </div>
         <p id="refreshamtship-display"></p>
         <p id="shipoutput"></p>
+        <button onchange="staramtship()" onclick="outputShipData()">Calculate</button>
       </div>
         <div id="Contact" class="tabcontent">
         <h4>Please email any suggestions or issues of website to this email</h4>
         <a href="mailto:farmingcalculatorswg@gmail.com">farmingcalculatorswg@gmail.com</a>
 
-      </div>
       
+      </div>
       <footer>
         <p>Star Wars Galaxy of Heroes Farming Calculator is not affiliated with with EA, EA Capital Games, Disney or Lucasfilm LTD.</p>
       </footer>
   </div>
   </div>
   </div>
-  <script src="index.js"></script>
+  </div>
+  <script src="test.js"></script>
 </body>
 </html>

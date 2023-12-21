@@ -139,13 +139,70 @@ label{
     color: white;
 }
 
-
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 1100px) {/*laptop*/
+    h1, h2, h3, h4 {
+        font-size: 3vw;
+    }
+    p  {
+        font-size: 1.5vw;
+    }
+    label{
+        font-size: 1.5vw;
+    }
+    select{
+        font-size: 1vw;
+    }
+    input{
+        font-size: 1vw;
+    }
+}
+@media screen and (max-width: 1099px) {/*tablet*/
+    h1, h2, h3, h4 {
+        font-size: 4.5vw;
+    }
+    p  {
+        font-size: 3vw;
+    }
+    label{
+        font-size: 3vw;
+    }
+    select{
+        font-size: 2.5vw;
+    }
+    input{
+        font-size: 2.5vw;
+    }
+}
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 990px) {/*iphone size*/
+    h1, h2, h3, h4 {
+        font-size: 6.5vw;
+    }
+    p  {
+        font-size: 4vw;
+    }
+    label{
+        font-size: 4vw;
+    }
+    select{
+        font-size: 4vw;
+    }
+    input{
+        font-size: 4vw;
+    }
+}
 footer {
     text-align: center;
     padding: 3px;
     background-color: rgb(0, 0, 0);
     color: white;
 }
+/*scroll bar*/
+.scroll-container {
+    height: 100%; 
+    overflow-y: scroll; 
+  }
 /*STAR BACKGROUND*/
 body {
     background-color: black;
