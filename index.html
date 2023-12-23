@@ -339,7 +339,7 @@
 
           <p>How many stars?</p>
           <div>
-            <select id="selectstar">
+            <select id="selectstar" onchange="staramt()">
              <option value = "choose">choose</option>
               <option value = "0">0</option>
               <option value = "10">1</option>
@@ -366,7 +366,7 @@
           </div>
           <p id="refreshamt-display"></p>
           <p id="output"></p>
-          <button onchange="staramt()" onclick="outputCharacterData()">Submit</button>
+          <button onclick="outputCharacterData()">Submit</button>
       </div>
       
       <div id="Ships" class="tabcontent">
@@ -446,7 +446,7 @@
 
         <p>How many stars?</p>
         <div>
-          <select id="selectstarship">
+          <select id="selectstarship" onchange="staramtship()">
            <option value = "choose">choose</option>
             <option value = "0">0</option>
             <option value = "10">1</option>
@@ -473,7 +473,7 @@
         </div>
         <p id="refreshamtship-display"></p>
         <p id="shipoutput"></p>
-        <button onchange="staramtship()" onclick="outputShipData()">Calculate</button>
+        <button onclick="outputShipData()">Calculate</button>
       </div>
         <div id="Contact" class="tabcontent">
         <h4>Please email any suggestions or issues of website to this email</h4>
