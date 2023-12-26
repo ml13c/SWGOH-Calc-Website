@@ -521,6 +521,9 @@ function outputCharacterData() {
         if(v.Nodeamount==0){
           values.push("This unit is not accessible through energy nodes");
         }
+        if(v.NodeShardamount==1){
+          values.push("Unit not accelerated (only drops 1 shard)")
+        }
       }
     }
     document.getElementById("output").innerHTML = values.join("<br>");
@@ -545,12 +548,15 @@ function outputShipData(){
   const values = [];
   for (const [k, v] of shipsswgohMap.entries()) {
     if (k === key) {
-      values.push("Ship: "+ v.Shipname+", ");
-      values.push("Location: "+ v.SLocation+": , ");
+      values.push("Ship: "+ v.Shipname);
+      values.push("Location: "+ v.SLocation+":");
       values.push("Will obtain "+ (shipfinalshardsremaining-shipfinalshardAmt)+" shards in:");
       values.push(sdaystofarm= ((shipfinalshardsremaining-shipfinalshardAmt)/((v.SNodeamount)*(shipBattleAmt)*(droprate)*(v.SNodeShardamount)+(v.sshipmentshardamount))).toFixed(1)+ " days")
       if(v.SNodeamount==0){
         values.push("This unit is not accessible through energy nodes");
+      }
+      if(v.SNodeShardamount==1){
+        values.push("Unit not accelerated (only drops 1 shard)")
       }
     }
   }
