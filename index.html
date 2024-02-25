@@ -31,7 +31,14 @@
             <span class="nav-item" onclick="openMAINTAB(event, 'Characters')">Characters</span>
           </a>
           <span class="tooltip">Characters</span>
-        </li>        
+        </li> 
+        <li>
+          <a href="#">
+            <i class='bx bx-doughnut-chart'></i>
+            <span class="nav-item" onclick="openMAINTAB(event, 'Relics')">Relics</span>
+          </a>
+          <span class="tooltip">Relics</span>
+        </li>       
         <li>
           <a href="#">
             <i class="bx bxs-plane"></i>
@@ -39,7 +46,14 @@
           </a>
           <span class="tooltip">Ships</span>
         </li>
-                <li>
+        <li>
+          <a href="#">
+            <i class='bx bxl-sketch'></i>
+            <span class="nav-item" onclick="openMAINTAB(event, 'Crystal Income')">Crystal Income</span>
+          </a>
+          <span class="tooltip">Crystal Income</span>
+        </li>
+        <li>
           <a href="#">
             <i class="bx bx-envelope"></i>
             <span class="nav-item" onclick="openMAINTAB(event, 'Contact')">Contact</span>
@@ -369,6 +383,50 @@
           <button onclick="outputCharacterData()">Submit</button>
       </div>
       
+      <div id="Relics" class="tabcontent">
+        <div>
+          <p>Select Current Relic:</p>
+          <select id="selectcurrentRelic">
+            <option value=""></option>
+            <option value="Relic 0">0</option>
+            <option value="Relic 1">1</option>
+            <option value="Relic 2">2</option>
+            <option value="Relic 3">3</option>
+            <option value="Relic 4">4</option>
+            <option value="Relic 5">5</option>
+            <option value="Relic 6">6</option>
+            <option value="Relic 7">7</option>
+            <option value="Relic 8">8</option>
+            <option value="Relic 9">9</option>
+          </select>
+        </div>
+        <div>
+          <p>Select Desired Relic:</p>
+          <select id="selectdesiredRelic">
+            <option value=""></option>
+            <option value="Relic 1">1</option>
+            <option value="Relic 2">2</option>
+            <option value="Relic 3">3</option>
+            <option value="Relic 4">4</option>
+            <option value="Relic 5">5</option>
+            <option value="Relic 6">6</option>
+            <option value="Relic 7">7</option>
+            <option value="Relic 8">8</option>
+            <option value="Relic 9">9</option>
+          </select>
+        </div>
+        <div>
+          <label for="cantinarefreshamt">Enter Cantina Refresh Amount:</label>
+          <input type="number" id="cantinarefreshamt" name="cantinarefresh">
+        </div>
+        <p id="RELICmatsneeded"></p>
+        <p id="daysFlawed"></p>
+        <p id="daysIncomplete"></p>
+        <p id="daysFragmented"></p>
+        <p id="daystotal"></p>
+        <button onclick="outputRelicMats()">Calculate</button>
+      </div>
+
       <div id="Ships" class="tabcontent">
         <h4>Ships</h4>
         <p>Choose a ship:</p>
@@ -475,7 +533,118 @@
         <p id="shipoutput"></p>
         <button onclick="outputShipData()">Calculate</button>
       </div>
-        <div id="Contact" class="tabcontent">
+
+      <div id="Crystal Income" class="tabcontent">
+        <h4>Crystal Income</h4>
+        <div>
+        <label for="fleetrank">Enter Fleet Arena Rank:</label>
+        <input type="number" id="fleetrank" name="fleetArena">
+        </div>
+
+        <p>How many stars earned in ROTE raid?</p>
+        <div>
+          <select id="selectraidSTARS">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>          
+          </select>
+        </div>
+        <p>What rank do you end up in for GAC weekly matches(1-8)</p>
+        <div>
+          <select id="selectGACweeklyrank">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <p>What League are you in?</p>
+        <div>
+          <select id="selectGACleague">
+            <option value="Carbonite">Carbonite</option>
+            <option value="Bronzium">Bronzium</option>
+            <option value="Chromium">Chromium</option>
+            <option value="Aurodium">Aurodium</option>
+            <option value="Kyber">Kyber</option>
+          </select>
+          </div>
+          <p>Division:</p>
+          <div>
+          <select id="selectGACdivision">
+            <option value="1">I</option>
+            <option value="2">II</option>
+            <option value="3">III</option>
+            <option value="4">IV</option>
+            <option value="5">V</option>
+          </select>
+        </div>
+        <p id="GACWeeklyMatch"></p>
+        <p id="GACdailycrystals"></p>
+        <p id="GACchamprewards"></p>
+        <p id="fleetCrystals"></p>
+        <p id="tbCrystals"></p>
+        <p id="monthlyIncome"></p>
+        <button onclick="outputCrystalData()">Calculate</button>
+      </div>
+
+      <div id="Contact" class="tabcontent">
         <h4>Please email any suggestions or issues of website to this email</h4>
         <a href="mailto:farmingcalculatorswg@gmail.com">farmingcalculatorswg@gmail.com</a>
 

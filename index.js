@@ -96,7 +96,7 @@ function staramt() {
         break;
     }
   }
-  function staramtship() {
+function staramtship() {
     let shardsremaining = 330;
     var select = document.getElementById("selectstarship");
     var y = parseInt(select.value);
@@ -170,7 +170,22 @@ function staramt() {
         break;
     }
   }
+
+
 //Data
+const relicMap = new Map([
+  ["Relic 0", { Relic: "0", CarboniteCircuitBoard: 0, BronziumWiring: 0, ChromiumTransistor: 0, AurodiumHeatsink: 0, ElectriumConductor: 0, ZinbiddleCard: 0, Fragmented: 0, Incomplete: 0, Flawed: 0, ImpulseDetector: 0, Aeromagnifier: 0, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 1", { Relic: "1", CarboniteCircuitBoard: 40, BronziumWiring: 0, ChromiumTransistor: 0, AurodiumHeatsink: 0, ElectriumConductor: 0, ZinbiddleCard: 0, Fragmented: 0, Incomplete: 0, Flawed: 0, ImpulseDetector: 0, Aeromagnifier: 0, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 2", { Relic: "2", CarboniteCircuitBoard: 70, BronziumWiring: 40, ChromiumTransistor: 0, AurodiumHeatsink: 0, ElectriumConductor: 0, ZinbiddleCard: 0, Fragmented: 15, Incomplete: 0, Flawed: 0, ImpulseDetector: 0, Aeromagnifier: 0, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 3", { Relic: "3", CarboniteCircuitBoard: 100, BronziumWiring: 80, ChromiumTransistor: 20, AurodiumHeatsink: 0, ElectriumConductor: 0, ZinbiddleCard: 0, Fragmented: 35, Incomplete: 15, Flawed: 0, ImpulseDetector: 0, Aeromagnifier: 0, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 4", { Relic: "4", CarboniteCircuitBoard: 130, BronziumWiring: 120, ChromiumTransistor: 60, AurodiumHeatsink: 0, ElectriumConductor: 0, ZinbiddleCard: 0, Fragmented: 55, Incomplete: 40, Flawed: 0, ImpulseDetector: 0, Aeromagnifier: 0, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 5", { Relic: "5", CarboniteCircuitBoard: 160, BronziumWiring: 160, ChromiumTransistor: 90, AurodiumHeatsink: 20, ElectriumConductor: 20, ZinbiddleCard: 0, Fragmented: 75, Incomplete: 65, Flawed: 15, ImpulseDetector: 0, Aeromagnifier: 0, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 6", { Relic: "6", CarboniteCircuitBoard: 180, BronziumWiring: 190, ChromiumTransistor: 120, AurodiumHeatsink: 40, ElectriumConductor: 20, ZinbiddleCard: 0, Fragmented: 95, Incomplete: 90, Flawed: 40, ImpulseDetector: 20, Aeromagnifier: 20, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 7", { Relic: "7", CarboniteCircuitBoard: 200, BronziumWiring: 220, ChromiumTransistor: 140, AurodiumHeatsink: 60, ElectriumConductor: 40, ZinbiddleCard: 10, Fragmented: 115, Incomplete: 115, Flawed: 75, ImpulseDetector: 40, Aeromagnifier: 40, GyrdaKeypad: 0, DroidBrain: 0 }],
+  ["Relic 8", { Relic: "8", CarboniteCircuitBoard: 200, BronziumWiring: 220, ChromiumTransistor: 160, AurodiumHeatsink: 80, ElectriumConductor: 60, ZinbiddleCard: 30, Fragmented: 135, Incomplete: 140, Flawed: 120, ImpulseDetector: 60, Aeromagnifier: 60, GyrdaKeypad: 20, DroidBrain: 20 }],
+  ["Relic 9", { Relic: "9", CarboniteCircuitBoard: 200, BronziumWiring: 220, ChromiumTransistor: 180, AurodiumHeatsink: 100, ElectriumConductor: 80, ZinbiddleCard: 50, Fragmented: 165, Incomplete: 170, Flawed: 175, ImpulseDetector: 100, Aeromagnifier: 80, GyrdaKeypad: 20, DroidBrain: 20 }]
+]);
+
   const swgohMap = new Map([
     ["0-0-0", {Charactername: "0-0-0", Location: "Dark Side Battles: 2-A (Hard)", Nodeamount: 1 , NodeShardamount: 1 , charactershipmentshardamount: 0 ,}],
     ["50R-T", {Charactername: "50R-T", Location: "Dark Side Battles: 3-E (Hard)", Nodeamount: 1 , NodeShardamount: 2 , charactershipmentshardamount: 0 ,}],
@@ -497,6 +512,75 @@ function staramt() {
 ["Wedge Antilles's X-wing", {Shipname: "Wedge Antilles's X-wing", SLocation: "Galactic War Store", SNodeamount: 0 , SNodeShardamount: 0 , sshipmentshardamount: 4.000000 ,}],
 ["Xanadu Blood", {Shipname: "Xanadu Blood", SLocation: "Light Side Battles: 8-B (Hard)", SNodeamount: 1 , SNodeShardamount: 1 , sshipmentshardamount: 0.000000 ,}],
   ]);
+
+  class GACleagues {
+    constructor(daily, roundWinCrystals, roundLossCrystals, championshipCrystals) {
+      this.daily = daily;
+      this.roundWinCrystals = roundWinCrystals;
+      this.roundLossCrystals = roundLossCrystals;
+      this.championshipCrystals = championshipCrystals;
+    }
+}
+
+class LeagueRewards {
+  constructor() {
+      this.leagues = {};
+  }
+
+  addLeague(leagueName, divisions) {
+      this.leagues[leagueName] = divisions;
+  }
+
+  getDivisionReward(leagueName, division) {
+      if (this.leagues[leagueName] && this.leagues[leagueName][division - 1]) {
+          return this.leagues[leagueName][division - 1];
+      } else {
+          return null;
+      }
+  }
+}
+const leagueRewards = new LeagueRewards();
+// league data
+leagueRewards.addLeague("Kyber", [
+  { division: 1, rewards: new GACleagues(260, 350, 900, 125) },
+  { division: 2, rewards: new GACleagues(240, 350, 825, 125) },
+  { division: 3, rewards: new GACleagues(220, 350, 750, 125) },
+  { division: 4, rewards: new GACleagues(200, 350, 675, 125) },
+  { division: 5, rewards: new GACleagues(180, 350, 600, 125) }
+]);
+
+leagueRewards.addLeague("Aurodium", [
+  { division: 1, rewards: new GACleagues(170, 350, 550, 125) },
+  { division: 2, rewards: new GACleagues(160, 350, 510, 125) },
+  { division: 3, rewards: new GACleagues(150, 350, 470, 125) },
+  { division: 4, rewards: new GACleagues(140, 350, 430, 125) },
+  { division: 5, rewards: new GACleagues(130, 350, 390, 125) }
+]);
+
+leagueRewards.addLeague("Chromium", [
+  { division: 1, rewards: new GACleagues(125, 350, 350, 125) },
+  { division: 2, rewards: new GACleagues(120, 350, 320, 125) },
+  { division: 3, rewards: new GACleagues(115, 350, 290, 125) },
+  { division: 4, rewards: new GACleagues(110, 350, 260, 125) },
+  { division: 5, rewards: new GACleagues(105, 350, 230, 125) }
+]);
+
+leagueRewards.addLeague("Bronzium", [
+  { division: 1, rewards: new GACleagues(100, 350, 200, 125) },
+  { division: 2, rewards: new GACleagues(95, 350, 180, 125) },
+  { division: 3, rewards: new GACleagues(90, 350, 160, 125) },
+  { division: 4, rewards: new GACleagues(85, 350, 140, 125) },
+  { division: 5, rewards: new GACleagues(80, 350, 120, 125) }
+]);
+
+leagueRewards.addLeague("Carbonite", [
+  { division: 1, rewards: new GACleagues(75, 350, 110, 125) },
+  { division: 2, rewards: new GACleagues(70, 350, 100, 125) },
+  { division: 3, rewards: new GACleagues(65, 350, 90, 125) },
+  { division: 4, rewards: new GACleagues(60, 350, 80, 125) },
+  { division: 5, rewards: new GACleagues(55, 350, 70, 125) }
+]);
+
 //Character Tab
 function displayRefreshAmt() {
     var refreshAmt = document.getElementById("refreshamt").value;
@@ -565,10 +649,328 @@ function outputShipData(){
 document.getElementById("shardamountship").addEventListener("input", displayShipShardAmt);
 document.getElementById("refreshamtship").addEventListener("input", displayShipRefreshAmt);
 
-//unit not accessible through battles
-if(BattleAmt==0||shipBattleAmt==0){
+//Relics tab
+function relicCalculations() {
+  const currentRelicIn = document.getElementById("selectcurrentRelic").value;
+  const desiredRelicIn = document.getElementById("selectdesiredRelic").value;
+  const cantinaRefreshesIn = parseInt(document.getElementById("cantinarefreshamt").value);
+  const currentValues = [];
+  const desiredValues = [];
 
+  // Get the quantities for the current relic
+  let currentRelicValues = {};
+  for (const [relic, values] of relicMap.entries()) {
+    if (relic === currentRelicIn) {
+      currentRelicValues = values;
+      break;
+    }
+  }
+
+  // Get the quantities for the desired relic
+  let desiredRelicValues = {};
+  for (const [relic, values] of relicMap.entries()) {
+    if (relic === desiredRelicIn) {
+      desiredRelicValues = values;
+      break;
+    }
+  }
+
+  // Calculate the desired - current values for each item
+  for (const key in currentRelicValues) {
+    if (currentRelicValues.hasOwnProperty(key) && key !== "Relic") {
+      const currentValue = currentRelicValues[key];
+      const desiredValue = desiredRelicValues[key];
+      const difference = desiredValue - currentValue;
+      currentValues.push({ gear: key, value: currentValue });
+      desiredValues.push({ gear: key, value: difference });
+    }
+  }
+
+  // Define daily values for each specific gear item
+  let cantinabattles = ((cantinaRefreshesIn * 120) + 165) / 16;
+  const dailyFragmented = 1.3 * cantinabattles;
+  const dailyIncomplete = cantinabattles * 0.9;
+  const dailyFlawed = cantinabattles * 0.6;
+
+  // Get the specific values for Fragmented, Incomplete, and Flawed gear
+  const specificFragmented = desiredValues.find(item => item.gear === "Fragmented").value;
+  const specificIncomplete = desiredValues.find(item => item.gear === "Incomplete").value;
+  const specificFlawed = desiredValues.find(item => item.gear === "Flawed").value;
+
+  // Calculate the number of days required to obtain each specific gear item
+  const daysFragmented = specificFragmented / dailyFragmented;
+  const daysIncomplete = specificIncomplete / dailyIncomplete;
+  const daysFlawed = specificFlawed / dailyFlawed;
+
+  // Output the results
+  const matsNeededString = desiredValues.map(item => `${item.gear}: ${item.value}<br>`).join("");
+  document.getElementById("RELICmatsneeded").innerHTML = "Relic Materials Needed:<br>" + matsNeededString;
+  document.getElementById("daysFlawed").textContent = "Days to farm Flawed: " + Math.round(daysFlawed);
+  document.getElementById("daysIncomplete").textContent = "Days to farm Incomplete: " + Math.round(daysIncomplete);
+  document.getElementById("daysFragmented").textContent = "Days to farm Fragmented: " + Math.round(daysFragmented);
+  document.getElementById("daystotal").textContent = "Total days to farm signal data: " + Math.round(daysFlawed + daysFragmented + daysIncomplete);
 }
+
+function outputRelicMats() {
+  relicCalculations();
+}
+
+
+//Crystals Tab
+let fleetDaily = 0;
+let tbCrystals=0;
+let GACWeeklyMatch = 0;
+let GAClmatches, GACwmatches =0;
+function fleetArena() {
+  const rankIn = document.getElementById("fleetrank");
+  const rank = parseInt(rankIn.value);
+  if (rank === 1) {
+    fleetDaily = 400;
+  } else if (rank === 2) {
+    fleetDaily = 375;
+  } else if (rank === 3) {
+    fleetDaily = 350;
+  } else if (rank === 4) {
+    fleetDaily = 325;
+  } else if (rank === 5) {
+    fleetDaily = 300;
+  } else if (rank <= 10 && rank >= 6) {
+    fleetDaily = 200;
+  } else if (rank <= 20 && rank >= 11) {
+    fleetDaily = 100;
+  } else if (rank <= 50 && rank >= 21) {
+    fleetDaily = 50;
+  } else {
+    fleetDaily = 0;
+  }
+}
+
+function TerritoryBattles() {
+  const selectraidstrs = document.getElementById("selectraidSTARS");
+  const planetStars = parseInt(selectraidstrs.value);
+  switch(planetStars){
+    case 1:
+        tbCrystals=250;
+        break;
+    case 2:
+        tbCrystals=275;
+        break;
+    case 3:
+        tbCrystals=300;
+        break;
+    case 4:
+        tbCrystals=325;
+        break;
+    case 5:
+        tbCrystals=350;
+        break;
+    case 6:
+        tbCrystals=375;
+        break;
+    case 7:
+        tbCrystals=400;
+        break;
+    case 8:
+        tbCrystals=425;
+        break;
+    case 9:
+        tbCrystals=450;
+        break;
+    case 10:
+        tbCrystals=475;
+        break;
+    case 11:
+        tbCrystals=500;
+        break;
+    case 12:
+        tbCrystals=525;
+        break;
+    case 13:
+        tbCrystals=550;
+        break;
+    case 14:
+        tbCrystals=575;
+        break;
+    case 15:
+        tbCrystals=600;
+        break;
+    case 16:
+        tbCrystals=625;
+        break;
+    case 17:
+        tbCrystals=650;
+        break;
+    case 18:
+        tbCrystals=675;
+        break;
+    case 19:
+        tbCrystals=700;
+        break;
+    case 20:
+        tbCrystals=725;
+        break;
+    case 21:
+        tbCrystals=750;
+        break;
+    case 22:
+        tbCrystals=775;
+        break;
+    case 23:
+        tbCrystals=800;
+        break;
+    case 24:
+        tbCrystals=825;
+        break;
+    case 25:
+        tbCrystals=850;
+        break;
+    case 26:
+        tbCrystals=875;
+        break;
+    case 27:
+        tbCrystals=900;
+        break;
+    case 28:
+        tbCrystals=925;
+        break;
+    case 29:
+        tbCrystals=950;
+        break;
+    case 30:
+        tbCrystals=975;
+        break;
+    case 31:
+        tbCrystals=1000;
+        break;
+    case 32:
+        tbCrystals=1025;
+        break;
+    case 33:
+        tbCrystals=1050;
+        break;
+    case 34:
+        tbCrystals=1075;
+        break;
+    case 35:
+        tbCrystals=1100;
+        break;
+    case 36:
+        tbCrystals=1125;
+        break;
+    case 37:
+        tbCrystals=1150;
+        break;
+    case 38:
+        tbCrystals=1175;
+        break;
+    case 39:
+        tbCrystals=1200;
+        break;
+    case 40:
+        tbCrystals=1225;
+        break;
+    case 41:
+        tbCrystals=1250;
+        break;
+    case 42:
+        tbCrystals=1275;
+        break;
+    case 43:
+        tbCrystals=1300;
+        break;
+    case 44:
+        tbCrystals=1325;
+        break;
+    case 45:
+        tbCrystals=1350;
+        break;
+    case 46:
+        tbCrystals=1375;
+        break;
+    case 47:
+        tbCrystals=1400;
+        break;
+    case 48:
+        tbCrystals=1425;
+        break;
+    case 49:
+        tbCrystals=1450;
+        break;
+    case 50:
+        tbCrystals=1475;
+        break;
+    case 51:
+        tbCrystals=1500;
+        break;
+    case 52:
+        tbCrystals=1525;
+        break;
+    case 53:
+        tbCrystals=1550;
+        break;
+    case 54:
+        tbCrystals=1575;
+        break;
+    case 55:
+        tbCrystals=1600;
+        break;
+        }
+}
+
+function weeklyGAC() {
+  const GACrankin = document.getElementById("selectGACweeklyrank");
+  const GACrank = parseInt(GACrankin.value);
+  if (GACrank === 1) {
+    GACWeeklyMatch = 750;
+    GAClmatches=0;
+    GACwmatches=3;
+  } else if (GACrank >= 2 && GACrank <= 4) {
+    GACWeeklyMatch = 500;
+    GACwmatches=2;
+    GAClmatches=1;
+  } else if (GACrank >= 5 && GACrank <= 7) {
+    GACWeeklyMatch = 250;
+    GACwmatches=1;
+    GAClmatches=2
+  } else if (GACrank === 8) {
+    GACWeeklyMatch = 100;
+    GACwmatches=0;
+    GAClmatches=3;
+  }
+}
+
+function GACcalculateCrystals() {
+  const selectedLeague = document.getElementById("selectGACleague").value;
+  const selectedDivision = parseInt(document.getElementById("selectGACdivision").value);
+  const divisionRewards = leagueRewards.getDivisionReward(selectedLeague, selectedDivision);
+  return divisionRewards;
+}
+
+function outputCrystalData() {
+  const divisionRewards = GACcalculateCrystals();
+  if (divisionRewards) {
+    document.getElementById("GACdailycrystals").textContent = "GAC Daily Crystals(30x/month): " + divisionRewards.rewards.daily;
+    document.getElementById("GACchamprewards").textContent = "GAC Championship Rewards(1x/month): " + divisionRewards.rewards.championshipCrystals;
+}
+else {
+  console.error("Division rewards not found.");
+}
+
+  dailycrystals = 95;
+  fleetArena();
+  TerritoryBattles();
+  weeklyGAC();
+
+  // Calculate total monthly income
+  const monthlyIncome = (fleetDaily * 30) + (tbCrystals * 2) + (GACWeeklyMatch * 3) + (dailycrystals * 30) + (divisionRewards.rewards.daily * 30) + (divisionRewards.rewards.championshipCrystals) + ((divisionRewards.rewards.roundLossCrystals)*GAClmatches * 3) + (GACwmatches*(divisionRewards.rewards.roundWinCrystals) * 3);
+
+  document.getElementById("GACWeeklyMatch").textContent = "GAC Weekly Match Income(3x/month): " + GACWeeklyMatch;
+  document.getElementById("fleetCrystals").textContent = "Daily Fleet Arena Crystals(30x/month): " + fleetDaily;
+  document.getElementById("tbCrystals").textContent = "ROTE Territory Battle Crystals(2x/month): " + tbCrystals;
+  document.getElementById("monthlyIncome").textContent = "Monthly Crystal Income: " + monthlyIncome;
+}
+
+
 
 //sidebar
 let btn = document.querySelector('#btn')
